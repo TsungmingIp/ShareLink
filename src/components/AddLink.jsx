@@ -7,6 +7,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 export default function AddLink(props) {
+
+
   // const [props.show, setShow] = useState(false);
 
   // const { onFormSubmit, titleOnChange, urlOnChange, title, url, tags, tagsOnChange, ...rest } = props
@@ -29,19 +31,19 @@ export default function AddLink(props) {
         <Modal.Body>
           <h4>Fill out the form</h4>
           {/* ******************************* */}
-          <Form onSubmit={props.onFormSubmit}>
+          <Form id="submissionForm" onSubmit={props.onFormSubmit}>
             <Form.Group className="mb-3" >
 
               <Form.Label>Title</Form.Label>
-              <Form.Control name="title" onChange={props.titleOnChange} type="text" placeholder="Enter name" value={props.title} />
+              <Form.Control name="title" onChange={props.titleOnChange} type="text" placeholder="Enter name" />
 
               <Form.Label>URL</Form.Label>
-              <Form.Control name="url" onChange={props.urlOnChange} type="text" placeholder="www." value={props.url} />
+              <Form.Control name="url" onChange={props.urlOnChange} type="text" placeholder="www." />
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
               <Form.Label>Tags</Form.Label>
-              <Form.Control name="tags" onChange={props.tagsOnChange} type="text" placeholder="Enter Tags" value={props.tags} />
+              <Form.Control name="tags" onChange={props.tagsOnChange} type="text" placeholder="Enter Tags and use a comma to space" />
             </Form.Group>
 
             <Button variant="primary" type="submit" data-dismiss="modal" onClick={props.onHide}  >
@@ -54,7 +56,7 @@ export default function AddLink(props) {
           <Button onClick={props.onHide}>Close</Button>
         </Modal.Footer>
       </Modal>
-    </div>
+    </div >
   );
 }
 
